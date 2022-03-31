@@ -1,0 +1,40 @@
+// 리셋
+@import "base/reset";
+//변수
+@import "abstracts/variables";
+
+//믹스인
+@import "abstracts/mixin";
+
+//base
+@import "base/font";
+@import "base/base";
+@import "base/animation";
+
+//버튼
+@import "components/button";
+
+//배경용 버블
+@import "components/bubble";
+
+/* 헤더 */
+@import "layout/header";
+
+// 백신 통계
+@import "components/vaccineCard";
+
+//메인컨텐츠들
+@import "layout/maintop";
+@import "layout/howto";
+
+//푸터
+@import "layout/footer";
+
+//서브
+@import "layout/sub";
+
+//서브
+@import "layout/sidebar";
+
+//카드
+@import "components/card"

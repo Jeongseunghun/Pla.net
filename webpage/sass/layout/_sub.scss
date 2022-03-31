@@ -1,0 +1,155 @@
+.sub-contents {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  height: 80vh;
+  width: 75em;
+  margin: 2em auto;
+  @include tablet {
+    width: 100vw;
+    flex-direction: column;
+    height: max-content;
+  }
+}
+
+.dressup-btns {
+  position: relative;
+  @include tablet {
+    display: flex;
+  }
+  & > li {
+    position: relative;
+    width: 4.375rem;
+    height: 4.375rem;
+    background-color: white;
+    border-radius: 50%;
+    border: dashed 3px #dbdbdb;
+    margin-bottom: 2rem;
+    text-align: center;
+    cursor: pointer;
+    @include tablet {
+      margin: 1rem;
+    }
+    @include mobile {
+      margin: 0.5rem;
+    }
+
+    & > .material-icons {
+      pointer-events: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 36px;
+      color: gray;
+      @include mobile {
+        font-size: 24px;
+      }
+    }
+  }
+  .on {
+    border: none;
+    & > .material-icons {
+      font-size: 42px;
+      color: $color-navy;
+      @include mobile {
+        font-size: 30px;
+      }
+    }
+    &:after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      border-radius: 50%;
+      @extend %gradient3;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+}
+
+.sns_link {
+  justify-self: flex-end;
+  @include tablet {
+    display: flex;
+  }
+  & > li {
+    margin-bottom: 2em;
+    transition: 0.3s;
+    a {
+      opacity: 0.5;
+    }
+    &:last-child {
+      position: relative;
+    }
+    &:hover > a {
+      opacity: 1;
+    }
+    @include tablet {
+      margin: 1rem;
+    }
+    @include mobile {
+      margin: 0.7rem;
+    }
+    img {
+      @include mobile {
+        width: 80%;
+      }
+    }
+  }
+}
+.sns_link__copyurl {
+  position: absolute;
+  left: -50%;
+  display: none;
+  width: max-content;
+  @include mobile {
+    left: -100%;
+  }
+  .urlInput {
+    padding: 0.5rem;
+    @include mobile {
+      width: 30%;
+      padding: 0.3rem;
+      font-size: 50%;
+    }
+  }
+}
+//툴팁
+.tooltip {
+  opacity: 0;
+  position: absolute;
+  top: -120%;
+  right: -25%;
+  width: 100px;
+  padding: 7px;
+  font-size: 14px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background: rgb(51, 51, 51);
+  border: 0px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  text-shadow: rgba(0, 0, 0, 0.1) 1px 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 0px;
+}
+
+.tooltip:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  top: 90%;
+  left: 40px;
+}
+
+.urlInput-show {
+  display: block;
+}
