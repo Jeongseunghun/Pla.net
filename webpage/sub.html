@@ -34,16 +34,7 @@
                             face_retouching_natural
                         </span>
                     </li>
-                    <!-- <li class="eye_btn" data-parts="eyes">
-                        <span class="material-icons">
-                            visibility
-                        </span>
-                    </li> -->
-                    <!-- <li class="mouth_btn" data-parts="mouth">
-                        <span class="material-icons">
-                            emoji_emotions
-                        </span>
-                    </li> -->
+                    </li>
                     <li class="cloth_btn" data-parts="cloth">
                         <span class="material-icons">
                             checkroom
@@ -54,6 +45,15 @@
                             auto_awesome
                         </span>
                     </li>
+                    <li class="shoes_btn" data-parts="shoes">
+                        <span class="material-icons">
+                            visibility
+                        </span>
+                    </li>
+                    <li class="back_btn" data-parts="back">
+                        <span class="material-icons">
+                            emoji_emotions
+                        </span>
 
                 </ul>
                 <div class="chara__custom__wrap">
@@ -67,7 +67,7 @@
                                 </span>
                         </div>
                         <div class="chara__custom__img">
-                            <img src="img/character/static/hair_01.png" alt="헤어 작은 이미지">
+                            <img src="img/character/static/hair/hair_01.png" alt="헤어 작은 이미지">
                         </div>
                         <button class="chara__custom__btn custom--prev">
                             <span class="material-icons">
@@ -88,32 +88,42 @@
                 <section class="card-container">
                     <div id="capture" class="card-img">
                         <div id="cap1" class="character__area">
+                            
                             <img class="chara_base"src="img/character/base.png" alt="베이스">
+                            <img data-value = "back" class="chara_back chara-parts" src="img/character/static/back/back_01.png" alt="배경">
+                            <img data-value = "hair" class="chara_hair chara-parts" src="img/character/static/hair/hair_01.png" alt="머리">
+                            <img data-value = "cloth" class="chara_cloth chara-parts" src="img/character/static/cloth/cloth_01.png" alt="옷">
+                            <img data-value = "bottom" class="chara_bottom chara-parts" src="img/character/static/bottom/bottom_01.png" alt="바지">
+                            <img data-value = "shoes" class="chara_shoes chara-parts" src="img/character/static/shoes/shoes_01.png" alt="신발">
+                            
                             <!-- <img data-value = "accessory" class="chara_accessory chara-parts" src="img/character/accessory_01.png" alt="액세서리"> -->
-                            <img data-value = "cloth" class="chara_cloth chara-parts" src="img/character/static/cloth_01.png" alt="옷">
-                            <img data-value = "hair" class="chara_hair chara-parts" src="img/character/static/hair_01.png" alt="머리">
-                            <img data-value = "bottom" class="chara_bottom chara-parts" src="img/character/static/bottom_01.png" alt="바지">
-                            <!-- <img data-value = "mouth" class="chara_mouth chara-parts" src="img/character/mouth_01.png" alt="입">
-                            <img data-value = "eyes" class="chara_eye chara-parts" src="img/character/eyes_01.png" alt="눈"> -->
+                            
+                           
                         </div>
+                        
 
 
                         <div id="cap2" class="character__area2">
+                            <img data-value = "back" class="chara_back chara-parts2" src="img/character/dynamic/back/back2_01.png" alt="배경">  
                             <img class="chara_base"src="img/character/base2.png" alt="베이스">
                             <!-- <img data-value = "accessory" class="chara_accessory chara-parts2" src="img/character/accessory_01.png" alt="액세서리"> -->
-                            <img data-value = "cloth" class="chara_cloth chara-parts2" src="img/character/dynamic/cloth2_01.png" alt="옷">
-                            <img data-value = "hair" class="chara_hair chara-parts2" src="img/character/dynamic/hair2_01.png" alt="머리">
-                            <img data-value = "bottom" class="chara_bottom chara-parts2" src="img/character/dynamic/bottom2_01.png" alt="바지">
-                            <!-- <img data-value = "mouth" class="chara_mouth chara-parts2" src="img/character/mouth_01.png" alt="입"> -->
-                            <!-- <img data-value = "eyes" class="chara_eye chara-parts2" src="img/character/eyes_01.png" alt="눈"> -->  
+                            <img data-value = "cloth" class="chara_cloth chara-parts2" src="img/character/dynamic/cloth/cloth2_01.png" alt="옷">
+                            <img data-value = "hair" class="chara_hair chara-parts2" src="img/character/dynamic/hair/hair2_01.png" alt="머리">
+                            <img data-value = "bottom" class="chara_bottom chara-parts2" src="img/character/dynamic/bottom/bottom2_01.png" alt="바지">
+                            <img data-value = "shoes" class="chara_shoes chara-parts2" src="img/character/dynamic/shoes/shoes2_01.png" alt="신발">
+                            
                         </div>
 
                     
                         <!-- <img src="img/card_glass.png" alt="카드틀"> -->
-                        <img src="img/ref.jpeg" alt="틀">
-                    
+                        <img src="img/back.png" alt="틀">
+
                     </div>
-                    <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" reqiured maxlength="10">
+                    <form action="" method="get">
+                        <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" reqiured maxlength="10"/>
+                        <input type="submit" value="입력완료"/>
+                    </form>
+
                     <button class="btn-go-to-sub btn download-btn">                        
                             <span>다음</span>
                             <span class="material-icons">
@@ -121,6 +131,7 @@
                                 </span>
                     </button>
                 </section>
+                
                 
 
                 <!-- 공유하기 -->

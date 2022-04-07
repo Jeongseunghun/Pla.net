@@ -39,49 +39,49 @@ const hairBtn = document.querySelector(".hair_btn")
 const charaParts = [...document.querySelectorAll(".chara-parts")];
 const charaParts2 = [...document.querySelectorAll(".chara-parts2")];
 let hairIndex = 1,
-    eyesIndex = 1,
-    mouthIndex = 1,
     clothIndex = 1,
-    botIndex = 1;
+    botIndex = 1,
+    shoesIndex = 1,
+    backIndex = 1;
 let thumb = document.querySelector(".chara__custom__img > img")
 
 //이미지의 링크를 바꾸는 함수
 function partsImgChange(id, index) {
     const partsImg = charaParts.find(element => element.dataset.value == id)
     const partsImg2 = charaParts2.find(element => element.dataset.value == id)
-    partsImg.src = `img/character/static/${id}_0${index}.png`
-    partsImg2.src = `img/character/dynamic/${id}2_0${index}.png`
-    thumb.src = `img/character/static/${id}_0${index}.png`
+    partsImg.src = `img/character/static/${id}/${id}_0${index}.png`
+    partsImg2.src = `img/character/dynamic/${id}/${id}2_0${index}.png`
+    thumb.src = `img/character/static/${id}/${id}_0${index}.png`
 }
 //커스텀 창의 다음 버튼을 눌렀을 때 다음 사진으로 바뀌는 함수
 function nextPhoto(id) {
     if (id == "hair") {
         hairIndex++;
-        hairIndex %= 4;
+        hairIndex %= 2;
         if (hairIndex == 0) hairIndex = 1;
         partsImgChange(id, hairIndex);
     }
-    // if (id == "eyes") {
-    //     eyesIndex++;
-    //     eyesIndex %= 13;
-    //     if (eyesIndex == 0) eyesIndex = 1;
-    //     partsImgChange(id, eyesIndex);
-    // }
-    // if (id == "mouth") {
-    //     mouthIndex++;
-    //     mouthIndex %= 11;
-    //     if (mouthIndex == 0) mouthIndex = 1;
-    //     partsImgChange(id, mouthIndex);
-    // }
+    if (id == "shoes") {
+        shoesIndex++;
+        shoesIndex %= 2;
+        if (shoesIndex == 0) shoesIndex = 1;
+        partsImgChange(id, shoesIndex);
+    }
+    if (id == "back") {
+        backIndex++;
+        backIndex %= 3;
+        if (backIndex == 0) backIndex = 1;
+        partsImgChange(id, backIndex);
+    }
     if (id == "cloth") {
         clothIndex++;
-        clothIndex %= 4;
+        clothIndex %= 2;
         if (clothIndex == 0) clothIndex = 1;
         partsImgChange(id, clothIndex);
     }
     if (id == "bottom") {
         botIndex ++;
-        botIndex  %= 4;
+        botIndex  %= 2;
         if (botIndex  == 0) botIndex  = 1;
         partsImgChange(id, botIndex);
     }
@@ -90,31 +90,31 @@ function nextPhoto(id) {
 function prevPhoto(id) {
     if (id == "hair") {
         hairIndex--;
-        hairIndex %= 4;
+        hairIndex %= 2;
         if (hairIndex == 0) hairIndex = 1;
         partsImgChange(id, hairIndex);
     }
-    // if (id == "eyes") {
-    //     eyesIndex--;
-    //     eyesIndex %= 13;
-    //     if (eyesIndex == 0) eyesIndex = 1;
-    //     partsImgChange(id, eyesIndex);
-    // }
-    // if (id == "mouth") {
-    //     mouthIndex--;
-    //     mouthIndex %= 11;
-    //     if (mouthIndex == 0) mouthIndex = 1;
-    //     partsImgChange(id, mouthIndex);
-    // }
+    if (id == "shoes") {
+        shoesIndex--;
+        shoesIndex %= 2;
+        if (shoesIndex == 0) shoesIndex = 1;
+        partsImgChange(id, shoesIndex);
+    }
+    if (id == "back") {
+        backIndex--;
+        backIndex %= 3;
+        if (backIndex == 0) backIndex = 1;
+        partsImgChange(id, backIndex);
+    }
     if (id == "cloth") {
         clothIndex--;
-        clothIndex %= 4;
+        clothIndex %= 2;
         if (clothIndex == 0) clothIndex = 1;
         partsImgChange(id, clothIndex);
     }
     if (id == "bottom") {
         botIndex --;
-        botIndex  %= 4;
+        botIndex  %= 2;
         if (botIndex  == 0) botIndex  = 1;
         partsImgChange(id, botIndex);
     }
@@ -165,19 +165,19 @@ function customVisible(partsName) {
 
 function thumbUrl(id) {
     if (id == "hair") {
-        thumb.src = `img/character/static/${id}_0${hairIndex}.png`
+        thumb.src = `img/character/static/hair/${id}_0${hairIndex}.png`
     }
-    // if (id == "eyes") {
-    //     thumb.src = `img/character/${id}_0${eyesIndex}.png`
-    // }
-    // if (id == "mouth") {
-    //     thumb.src = `img/character/${id}_0${mouthIndex}.png`
-    // }
+    if (id == "shoes") {
+        thumb.src = `img/character/static/shoes/${id}_0${shoesIndex}.png`
+    }
+    if (id == "back") {
+        thumb.src = `img/character/static/back/${id}_0${backIndex}.png`
+    }
     if (id == "cloth") {
-        thumb.src = `img/character/static/${id}_0${clothIndex}.png`
+        thumb.src = `img/character/static/cloth/${id}_0${clothIndex}.png`
     }
     if (id == "bottom") {
-        thumb.src = `img/character/static/${id}_0${botIndex}.png`
+        thumb.src = `img/character/static/bottom/${id}_0${botIndex}.png`
     }
 }
 

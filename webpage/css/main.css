@@ -1776,7 +1776,7 @@ footer {
 
 /* 배경 */ 
 .card-img img {
-  width: 100%;
+  width: 40%;
 }
 
 
@@ -2056,7 +2056,7 @@ footer {
 }
 
 .character__area {
-  width: 20%;
+  width: 70%;
   height: 30%;
   background-color: transparent;
   position: absolute;
@@ -2065,12 +2065,12 @@ footer {
 }
 
 .character__area2 {
-  width: 20%;
+  width: 70%;
   height: 30%;
   background-color: transparent;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 70%;
 }
 .character__area img {
   position: absolute;
@@ -2079,39 +2079,50 @@ footer {
   position: absolute;
 }
 
-.character__area img.chara_eye {
+
+.character__area img.chara_back {
   z-index: 2;
 }
-.character__area2 img.chara_eye {
+.character__area2 img.chara_back {
   z-index: 2;
 }
-.character__area img.chara_mouth {
-  z-index: 2;
-}
-.character__area2 img.chara_mouth {
-  z-index: 2;
-}
-.character__area img.chara_hair {
-  z-index: 3;
-}
-.character__area2 img.chara_hair {
+.character__area img.chara_base{
   z-index: 3;
 }
 
+.character__area2 img.chara_base {
+  z-index: 3;
+}
 .character__area img.chara_cloth {
   z-index: 4;
 }
 .character__area2 img.chara_cloth {
   z-index: 4;
 }
-
-.character__area img.chara_accessory{
+.character__area img.chara_bottom {
+  z-index: 4;
+}
+.character__area2 img.chara_bottom {
   z-index: 4;
 }
 
-.character__area2 img.chara_accessory {
+.character__area img.chara_hair {
   z-index: 4;
 }
+.character__area2 img.chara_hair {
+  z-index: 4;
+}
+.character__area img.chara_shoes {
+  z-index: 4;
+}
+.character__area2 img.chara_shoes {
+  z-index: 4;
+}
+
+
+
+
+
 
 
 
