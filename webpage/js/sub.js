@@ -32,6 +32,7 @@ function saveAs(uri, filename) {
 }
 
 
+
 const dressupBtns = document.querySelectorAll(".dressup-btns > li")
 const charaCustom = document.querySelector(".chara__custom__wrap");
 const customTitle = document.querySelector(".chara__custom__title")
@@ -181,6 +182,8 @@ function thumbUrl(id) {
     }
 }
 
+
+
 // // sns 공유기능
 // Kakao.init('60275652bb70080b75b0b61847ad6641');
 // function shareSNS(sns) {
@@ -221,3 +224,5 @@ function thumbUrl(id) {
 //     }, 1500)
 
 // }
+
+
