@@ -177,7 +177,7 @@ html {
   background: linear-gradient(90deg, #b58ecc 16%, #0cbaba 100%);
 }
 
-.btn_go-to-howto, .btn-go-to-sub::before {
+.btn-go-to-sub::before {
   background: #43dec8;
   background: -webkit-gradient(linear, left top, right top, color-stop(16%, #43dec8), to(#8ce9fa));
   background: linear-gradient(90deg, #43dec8 16%, #8ce9fa 100%);
@@ -190,12 +190,6 @@ html {
 }
 
 
-
-.point_gradient, .vaccine_count_titleArea h5, .vaccine__count__info .first-vaccine__numbers,
-.vaccine__count__info .second-vaccine__numbers,
-.vaccine__count__info .third-vaccine__numbers, .main__info__maintitle, .section-title, .card-img input#name {
-  font-family: "HSGaeulSenggak20";
-}
 
 .main_top, .main_howto {
   display: -webkit-box;
@@ -215,7 +209,7 @@ html {
   background: linear-gradient(90deg, #b58ecc 16%, #0cbaba 100%);
 }
 
-.btn_go-to-howto, .btn-go-to-sub::before {
+.btn-go-to-sub::before {
   background: #43dec8;
   background: -webkit-gradient(linear, left top, right top, color-stop(16%, #43dec8), to(#8ce9fa));
   background: linear-gradient(90deg, #43dec8 16%, #8ce9fa 100%);
@@ -673,115 +667,6 @@ html {
           box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.sns_link {
-  justify-self: flex-end;
-}
-
-@media screen and (max-width: 1199px) {
-  .sns_link {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.sns_link > li {
-  margin-bottom: 2em;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.sns_link > li a {
-  opacity: 0.5;
-}
-
-.sns_link > li:last-child {
-  position: relative;
-}
-
-.sns_link > li:hover > a {
-  opacity: 1;
-}
-
-@media screen and (max-width: 1199px) {
-  .sns_link > li {
-    margin: 1rem;
-  }
-}
-
-@media screen and (max-width: 757px) {
-  .sns_link > li {
-    margin: 0.7rem;
-  }
-}
-
-@media screen and (max-width: 757px) {
-  .sns_link > li img {
-    width: 80%;
-  }
-}
-
-.sns_link__copyurl {
-  position: absolute;
-  left: -50%;
-  display: none;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-
-@media screen and (max-width: 757px) {
-  .sns_link__copyurl {
-    left: -100%;
-  }
-}
-
-.sns_link__copyurl .urlInput {
-  padding: 0.5rem;
-}
-
-@media screen and (max-width: 757px) {
-  .sns_link__copyurl .urlInput {
-    width: 30%;
-    padding: 0.3rem;
-    font-size: 50%;
-  }
-}
-
-.tooltip {
-  opacity: 0;
-  position: absolute;
-  top: -120%;
-  right: -25%;
-  width: 100px;
-  padding: 7px;
-  font-size: 14px;
-  text-align: center;
-  color: white;
-  background: #333333;
-  border: 0px solid white;
-  border-radius: 5px;
-  text-shadow: rgba(0, 0, 0, 0.1) 1px 1px 1px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 0px;
-          box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 0px;
-}
-
-.tooltip:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-width: 10px;
-  border-style: solid;
-  border-color: #333 transparent transparent transparent;
-  top: 90%;
-  left: 40px;
-}
-
-.urlInput-show {
-  display: block;
-}
-
 .chara__custom__wrap {
   visibility: hidden;
   opacity: 0;
@@ -1035,3 +920,4 @@ html {
 .character__area2 img.chara_shoes {
   z-index: 4;
 }
+
