@@ -50,14 +50,7 @@ EX: if an asset is designed as a 10px by 10px square, we can multiply by pixel s
     transform: translate3d(-100%,0%,0);
   }
 }
-@-webkit-keyframes walkAnimation_re {
-	from {
-	  transform: translate3d(0%,0%,0);
-	}
-	to {
-	  transform: translate3d(-100%,0%,0);
-	}
-  }
+
 @keyframes walkAnimation {
   from {
     transform: translate3d(0%,0%,0);
@@ -66,24 +59,25 @@ EX: if an asset is designed as a 10px by 10px square, we can multiply by pixel s
     transform: translate3d(-100%,0%,0);
   }
 }
-@keyframes walkAnimation_re {
-	from {
-	  transform: translate3d(0%,0%,0);
-	}
-	to {
-	  transform: translate3d(-100%,0%,0);
-	}
-  }
+
 
 /* 
 	One spritesheet containing layout of 4 by 4 frames, each designed at 32x32.
 	Total width = 128px multiplied by dynamic pixel size.
 	The visible part is cropped out via .Character's overflow:hidden rule. This image lives *inside* the .Character container.
 */
-.Character_sprite-sheet_base {
-	width: calc(var(--pixel-size) * 128px);
+.walk {
 	-webkit-animation: walkAnimation 1.5s steps(4) infinite;
-	        animation: walkAnimation 1.5s steps(4) infinite; 
+	animation: walkAnimation 1.5s steps(4) infinite; 
+	display: block;
+}
+
+
+/* 악세사리 */
+.Character_sprite-sheet_accessory.walk {
+	width: calc(var(--pixel-size) * 128px);
+	/* -webkit-animation: walkAnimation 1.5s steps(4) infinite;
+	        animation: walkAnimation 1.5s steps(4) infinite;  */
    /* ^ "Complete the animation in 4 distinct steps". We use 4 because each row of the spritesheet has 4 frames. */
 	position: absolute;
 	top:0;
@@ -91,31 +85,65 @@ EX: if an asset is designed as a 10px by 10px square, we can multiply by pixel s
    
 	display: none; /* For the sake of this demo, JS will control which character spritesheet is visible */
 }
-.Character_sprite-sheet_base.active0 {
+.Character_sprite-sheet_accessory.active_accessory.walk {
 	display: block;
 }
 
+/* 몸통 */
+.Character_sprite-sheet_base.walk {
+	width: calc(var(--pixel-size) * 128px);
+	/* -webkit-animation: walkAnimation 1.5s steps(4) infinite;
+	        animation: walkAnimation 1.5s steps(4) infinite;  */
+   /* ^ "Complete the animation in 4 distinct steps". We use 4 because each row of the spritesheet has 4 frames. */
+	position: absolute;
+	top:0;
+	left:0;
+   
+	display: none; /* For the sake of this demo, JS will control which character spritesheet is visible */
+}
+.Character_sprite-sheet_base.active_base.walk {
+	display: block;
+}
 
-.Character_sprite-sheet_cloth {
+/* 헤어 */
+.Character_sprite-sheet_hair.walk {
 	
 	width: calc(var(--pixel-size) * 128px);
-	-webkit-animation: walkAnimation 1.5s steps(4) infinite;
-	        animation: walkAnimation 1.5s steps(4) infinite; 
+	/* -webkit-animation: walkAnimation 1.5s steps(4) infinite;
+	        animation: walkAnimation 1.5s steps(4) infinite;  */
    /* ^ "Complete the animation in 4 distinct steps". We use 4 because each row of the spritesheet has 4 frames. */
 	position: absolute;
 	top:0;
 	left:0;
 	display: none; /* For the sake of this demo, JS will control which character spritesheet is visible */
 }
-.Character_sprite-sheet_cloth.active {
+.Character_sprite-sheet_hair.active_hair.walk {
 	display: block;
 	
 }
 
-.Character_sprite-sheet_bottom {
+/* 옷 */
+.Character_sprite-sheet_cloth.walk {
+	
 	width: calc(var(--pixel-size) * 128px);
-	-webkit-animation: walkAnimation 1.5s steps(4) infinite;
-	        animation: walkAnimation 1.5s steps(4) infinite; 
+	/* -webkit-animation: walkAnimation 1.5s steps(4) infinite;
+	        animation: walkAnimation 1.5s steps(4) infinite;  */
+   /* ^ "Complete the animation in 4 distinct steps". We use 4 because each row of the spritesheet has 4 frames. */
+	position: absolute;
+	top:0;
+	left:0;
+	display: none; /* For the sake of this demo, JS will control which character spritesheet is visible */
+}
+.Character_sprite-sheet_cloth.active_cloth.walk {
+	display: block;
+	
+}
+
+/* 바지 */
+.Character_sprite-sheet_bottom.walk {
+	width: calc(var(--pixel-size) * 128px);
+	/* -webkit-animation: walkAnimation 1.5s steps(4) infinite;
+	        animation: walkAnimation 1.5s steps(4) infinite;  */
    /* ^ "Complete the animation in 4 distinct steps". We use 4 because each row of the spritesheet has 4 frames. */
 	position: absolute;
 	top:0;
@@ -123,7 +151,23 @@ EX: if an asset is designed as a 10px by 10px square, we can multiply by pixel s
 	display: none; /* For the sake of this demo, JS will control which character spritesheet is visible */
 }
 
-.Character_sprite-sheet_bottom.active1 {
+.Character_sprite-sheet_bottom.active_bottom.walk {
+	display: block;
+}
+
+/* 신발 */
+.Character_sprite-sheet_shoes.walk {
+	width: calc(var(--pixel-size) * 128px);
+	/* -webkit-animation: walkAnimation 1.5s steps(4) infinite;
+	        animation: walkAnimation 1.5s steps(4) infinite;  */
+   /* ^ "Complete the animation in 4 distinct steps". We use 4 because each row of the spritesheet has 4 frames. */
+	position: absolute;
+	top:0;
+	left:0;
+	display: none; /* For the sake of this demo, JS will control which character spritesheet is visible */
+}
+
+.Character_sprite-sheet_shoes.active_shoes.walk {
 	display: block;
 }
 
@@ -175,7 +219,8 @@ body {
 .TitleImage {
 	width: calc(var(--pixel-size) * 95px);
 	display: block;
-	margin: 0 auto;
+	margin: auto;
+	margin-top: -70px;
 }
 .NavigationBubble {
 	-webkit-appearance: none;
@@ -205,24 +250,56 @@ body {
 	top: 50%;
 }
 
+/* 악세사리 버튼 */
+.NextSpritesheetButton--prev--accessory {
+	top: -10%;
+	  left: 80%;
+}
+.NextSpritesheetButton--next--accessory {
+	top: -10%;
+	  right: 0;
+}
 
-.NextSpritesheetButton--prev {
+/* 머리 버튼 */
+.NextSpritesheetButton--prev--hair {
+	top: 10%;
+	  left: 0;
+}
+.NextSpritesheetButton--next--hair {
+	top: 10%;
+	  right: 0;
+}
+
+/* 옷 버튼 */
+.NextSpritesheetButton--prev--cloth {
   top: 30%;
 	left: 0;
 }
-.NextSpritesheetButton--next {
+.NextSpritesheetButton--next--cloth {
   top: 30%;
 	right: 0;
 }
 
-.NextSpritesheetButton--prev1 {
+/* 바지 버튼 */
+.NextSpritesheetButton--prev--bottom {
   top: 50%;
 	left: 0;
 }
-.NextSpritesheetButton--next1 {
+.NextSpritesheetButton--next--bottom {
 	top:50%;
   right: 0;
 }
+
+/* 신발 버튼 */
+.NextSpritesheetButton--prev--shoes {
+	top: 70%;
+	  left: 0;
+  }
+.NextSpritesheetButton--next--shoes {
+	  top:70%;
+	right: 0;
+  }
+
 
 .NextSpritesheetButton:hover {
 	cursor: pointer;
@@ -262,3 +339,10 @@ body {
 	justify-content: center;
 }
 
+.btn {
+	width: 60px
+}
+
+.acc {
+	top: -10%;
+}
