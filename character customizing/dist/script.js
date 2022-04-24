@@ -189,19 +189,20 @@ function setDirection(direction) {
 	}
 
 	if (direction === "LEFT") { 
-		directionClass = "Character--walk-left" 
+		directionClass = "Character--walk-left"
 		document.querySelector(".DirectionArrow-left").classList.add("DirectionArrow--active")
 	}
 	if (direction === "RIGHT") { 
-		directionClass = "Character--walk-right" 
+		directionClass = "Character--walk-right"
 		document.querySelector(".DirectionArrow-right").classList.add("DirectionArrow--active")
 	}
 	if (direction === "UP") { 
-		directionClass = "Character--walk-up" 
+		directionClass = "Character--walk-up"
 		document.querySelector(".DirectionArrow-up").classList.add("DirectionArrow--active")
 	}
 
 	characterElement.classList.add(directionClass)
+
 }
 //몸통 베이스
 function setPreviousActive_base() {
@@ -323,7 +324,8 @@ setActive_base(activeIndex_base);
 setActive_accessory(activeIndex_accessory);
 setActive_hair(activeIndex_hair);
 setActive_cloth(activeIndex_cloth);
-setActive_bottom(activeIndex_bottom);
 setActive_shoes(activeIndex_shoes);
+setActive_bottom(activeIndex_bottom);
+
 
 

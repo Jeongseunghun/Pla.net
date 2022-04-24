@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Walking Sprites Demo</title>
+  <title>worryburry</title>
   <link href="https://fonts.googleapis.com/css?family=Dosis:400,700&display=swap" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
@@ -13,6 +13,7 @@
 <body>
 <!-- partial:index.partial.html -->
 <!-- 커스터마이징 버튼 -->
+
 <main class="Container">
         <img class="TitleImage PixelArtImage" src="image/title.png" alt="Walking Demo Sprites" />
         <div class="SpritesheetSlider">
@@ -24,29 +25,26 @@
                 <!-- Spritesheets injected here: -->
             </div>
            
-           
             <div class="Navigation flex-center">
                 <!-- Navigation bubbles injected here: -->
             </div>
 
              <!-- 악세사리 버튼 -->
-             <div>
-                <button class="NextSpritesheetButton NextSpritesheetButton--prev--accessory" onclick="setPreviousActive_accessory(); setPreviousActive_base(); accessory_re(); hair_re(); cloth_re(); bottom_re(); shoes_re();">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 7 7" shape-rendering="crispEdges">
-                        <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
-                        <path stroke="#434343" d="M3 0h1M2 1h1M1 2h1M0 3h1M1 4h1M2 5h1M3 6h1" />
-                    </svg>
-                </button>
-    
-                <img class="acc" src="image/acc.png" />
-    
-                <button class="NextSpritesheetButton NextSpritesheetButton--next--accessory" onclick="setNextActive_accessory(); setNextActive_base(); accessory_re(); hair_re(); cloth_re(); bottom_re(); shoes_re();">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 7 7" shape-rendering="crispEdges">
-                        <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
-                        <path stroke="#434343" d="M0 0h1M1 1h1M2 2h1M3 3h1M2 4h1M1 5h1M0 6h1" />
-                    </svg>
-                </button>
-             </div>
+             <button class="NextSpritesheetButton NextSpritesheetButton--prev--accessory" onclick="setPreviousActive_accessory(); setPreviousActive_base(); accessory_re(); hair_re(); cloth_re(); bottom_re(); shoes_re();">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 7 7" shape-rendering="crispEdges">
+                    <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
+                    <path stroke="#434343" d="M3 0h1M2 1h1M1 2h1M0 3h1M1 4h1M2 5h1M3 6h1" />
+                </svg>
+            </button>
+
+            <img src="image/acc.png" class="NextSpritesheetButton acc">
+
+            <button class="NextSpritesheetButton NextSpritesheetButton--next--accessory" onclick="setNextActive_accessory(); setNextActive_base(); accessory_re(); hair_re(); cloth_re(); bottom_re(); shoes_re();">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 7 7" shape-rendering="crispEdges">
+                    <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
+                    <path stroke="#434343" d="M0 0h1M1 1h1M2 2h1M3 3h1M2 4h1M1 5h1M0 6h1" />
+                </svg>
+            </button>
             
             <!-- 머리 버튼 -->
             <button class="NextSpritesheetButton NextSpritesheetButton--prev--hair" onclick="setPreviousActive_hair(); setPreviousActive_base(); accessory_re(); hair_re(); cloth_re(); bottom_re(); shoes_re();">
@@ -109,18 +107,19 @@
 
 <!-- 캐릭터 모션 버튼 -->
         <div class="DemoDirectionUI flex-center">
-            <button class="DirectionArrow DirectionArrow-left" onclick="setDirection('LEFT')">
-                    <img src="image/btn_1.png" class="btn" />
-
-            </button>
-            <button class="DirectionArrow DirectionArrow-up" onclick="setDirection('UP')">
-                    <img src="image/btn_2.png" class="btn" />
-            </button>
+            
+           
             <button class="DirectionArrow DirectionArrow-down DirectionArrow--active" onclick="setDirection('DOWN')">
-                    <img src="image/btn_3.png" class="btn" />
+                    <img src="image/btn_1.png" class="btn" />
             </button>
             <button class="DirectionArrow DirectionArrow-right" onclick="setDirection('RIGHT')">
-                    <img src="image/btn_4.png" class="btn" />
+                    <img src="image/btn_2.png" class="btn" />
+            </button>
+            <button class="DirectionArrow DirectionArrow-up" onclick="setDirection('UP')">
+                <img src="image/btn_3.png" class="btn" />
+            </button>
+            <button class="DirectionArrow DirectionArrow-left" onclick="setDirection('LEFT')">
+            <img src="image/btn_4.png" class="btn" />
             </button>
         </div>
 
