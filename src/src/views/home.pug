@@ -1,0 +1,19 @@
+doctype html
+html(lang="ko")
+    head
+        title 커스텀 페이지
+        link(rel="stylesheet", href="/static/css/styles.css")
+    body(id="home")
+        main
+            div(class="Character")
+                img(class="Character_spritesheet pixelart", src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/21542/DemoRpgCharacterShadow.png")
+                img(class="Character_spritesheet pixelart face-down", src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/21542/DemoRpgCharacter.png")
+            div(class="color-controls")
+                ul
+                    li 안녕하세요? 저는 당신의 걱정인형 도우미입니다.
+                    li 지금부터 걱정인형을 만들어 볼꺼예요!
+                    li 시작하기 버튼을 눌러볼까요?
+                p(class="typing")
+                p(id="start") 시작하기
+        script(src="http://code.jquery.com/jquery-latest.js")
+        script(src="/static/js/home.js")
