@@ -656,11 +656,23 @@ body {
     transform: translate3d(-100%, 0%, 0);
   }
 }
-#firstAnswer {
+#name {
   display: none;
 }
 
-.answer {
+#traffic {
+  display: none;
+}
+
+#worry {
+  display: none;
+}
+
+#last {
+  display: none;
+}
+
+.answer1 {
   font-family: "Pokemon GB", monospace;
   font-weight: 400;
   font-size: 20px;

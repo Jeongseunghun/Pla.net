@@ -8,7 +8,7 @@ module.exports = {
     saveCustom: BASE_JS + "saveCustom.js",
     home: BASE_JS + "home.js",
     question: BASE_JS + "question.js",
-    custom: BASE_JS + "custom.js"
+    custom: BASE_JS + "custom.js",
   },
   mode: "development",
   watch: true,

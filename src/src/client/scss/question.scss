@@ -50,11 +50,23 @@
 	}
   }
 
-#firstAnswer {
+#name {
     display: none;
 }
 
-.answer {
+#traffic {
+   display: none;
+}
+
+#worry {
+   display: none;
+}
+
+#last {
+   display: none;
+}
+
+.answer1 {
     @include pokeFont(2); 
     display: inline-block;
     cursor: pointer;
