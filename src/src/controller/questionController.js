@@ -1,4 +1,5 @@
 import customModel from "../models/Custom";
+import QRCode  from "qrcode";
 
 export const getQuestion = async (req, res) => {
     const datas = await customModel.find({}).sort({"id": -1});
@@ -10,4 +11,10 @@ export const getQuestion = async (req, res) => {
 export const postQuestion = async (req, res) => {
     const { name, message, character } = req.body;
     await customModel.findOneAndUpdate({name:character}, {$set: {username:name, message}});
+
+    QRCode.toDataURL("123").then(
+        url => {
+            return res.json(url);
+        }
+    )
 }

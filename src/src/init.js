@@ -2,7 +2,6 @@ import "./db";
 import "./models/Custom";
 import "regenerator-runtime";
 import app from "./server";
-import QRcode from "qrcode";
 
 const PORT = process.env.PORT || 8080;
 const hostname = `10.178.0.5`;

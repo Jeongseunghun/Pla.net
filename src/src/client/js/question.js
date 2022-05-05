@@ -400,7 +400,7 @@ lastAnswer.addEventListener('keypress', function (key) {
 })
 
 function sendMessage() {
-    $.ajax({
+    let qr = $.ajax({
         type: "POST",
         url: "/question",
         data: {
@@ -410,6 +410,7 @@ function sendMessage() {
         },
         dataType:"JSON",
     })
+    console.log(qr);
 }
 
 function nineTyping() {
@@ -427,3 +428,5 @@ function nineTyping() {
         }, 1000);
     }
 }
+
+

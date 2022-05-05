@@ -12,15 +12,13 @@ dlBtn.addEventListener("click", function () {
     img.classList.add("capImg_hair");
     cap.appendChild(img);
    
-    const hair = document.querySelector(".active_hair")
-    console.log(hair);
+    const hair = document.querySelector(".active_hair");
     const img2 = document.createElement("img");
     img2.src = hair.src;
     img2.classList.add("capImg_hair");
     cap.appendChild(img2);
 
     const cloth = document.querySelector(".active_cloth")
-    console.log(cloth);
     const img3 = document.createElement("img");
     img3.src = cloth.src;
     img3.classList.add("capImg_hair");
@@ -29,7 +27,7 @@ dlBtn.addEventListener("click", function () {
     const bottom = document.querySelector(".active_bottom")
     const img4 = document.createElement("img");
     img4.src = bottom.src;
-    img4.classList.add("capImg_bottom");
+    img4.classList.add("capImg_hair");
     cap.appendChild(img4);
 
     const shoes = document.querySelector(".active_shoes")
@@ -43,12 +41,10 @@ dlBtn.addEventListener("click", function () {
     img6.src = accessory.src;
     img6.classList.add("capImg_hair");
     cap.appendChild(img6);
-
     cap.classList.add("result");
     html2canvas(cap).then(canvas => {
         saveAs(canvas);
     })
-
 })
 
 function saveAs(canvas) {
@@ -67,16 +63,18 @@ function saveAs(canvas) {
     $.ajax({
         type: "POST",
         url: "/custom",
+        data: {"name": name},
+        dataType:"JSON",
+    })
+
+    $.ajax({
+        type: "POST",
+        url: "/custom",
         data: formdata,
         dataType:"JSON",
         processData: false,
         contentType: false,
     });
 
-    $.ajax({
-        type: "POST",
-        url: "/custom",
-        data: {"name": name},
-        dataType:"JSON",
-    })
+    window.location.href = "http://localhost:8080/question";
 }

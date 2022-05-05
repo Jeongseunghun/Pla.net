@@ -431,8 +431,65 @@ EX: if an asset is designed as a 10px by 10px square, we can multiply by pixel s
   }
 
   .result {
-	width: 400px;
-	height: 400px;
+	width: 2000px;
+	height: 2000px;
 	overflow: hidden;
 	position: relative;
 }
+
+.card-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	height: 100%;
+	width: 100%;
+  }
+  
+  
+  
+  /* 이름 입력 */
+  .form-input {
+	  position: relative;
+	font-size: larger;
+	text-align: center;
+	  font-weight: 600;
+	width: 350px;
+	  height: 45px;
+	margin: 30px 30px 30px 0px;
+	box-shadow: 0 -3px 0 #35363a, 0 3px 0 #35363a, 3px 0 0 #35363a,-3px 0 0 #35363a;
+	  outline: none;
+  }
+  
+  /* Chagne Border */
+  .form-input.border-dashed {
+	  border: 2px solid rgba(0, 0, 0, .15);
+	  background: rgba(0, 0, 0, .1);
+  }
+  .form-input.border-dashed:focus {
+	  border: 3px dashed #999;
+	box-shadow: none;
+	font-weight: 100;
+	  background: #fff;
+	  border-color: #4285F4;
+  }
+  
+  
+  /* 버튼 */
+  .new-btn{
+	display: flex;
+	font-size: medium;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	color: #35363a;
+	height: 43px;
+	width: 60px;
+	box-shadow: 0 -3px 0 #35363a, 0 3px 0 #35363a, 3px 0 0 #35363a,-3px 0 0 #35363a;
+  }
+  
+  .new-btn:hover {
+	cursor: pointer;
+	color: #fff;
+	  background-color: #4285F4;
+  }

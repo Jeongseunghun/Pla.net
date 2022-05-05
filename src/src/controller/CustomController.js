@@ -21,6 +21,5 @@ export const postCustomPage = async (req, res) => {
         });
         name = null;
         url = null;
-        res.redirect("/question");
     }
 }
