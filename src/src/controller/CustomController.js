@@ -18,7 +18,7 @@ export const postCustomPage = async (req, res) => {
         await customModel.create({
             name,
             url,
-        })
+        });
         name = null;
         url = null;
         res.redirect("/question");

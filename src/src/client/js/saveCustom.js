@@ -4,18 +4,51 @@ import html2canvas from "html2canvas";
 const dlBtn = document.querySelector(".download-btn");
 
 dlBtn.addEventListener("click", function () {
-    const charecter = document.querySelectorAll(".active_base")
     const cap = document.querySelector("#cap");
-    charecter.forEach(element => {
-        const img = document.createElement("img");
-        img.src = element.src;
-        img.classList.add("capImg_hair");
-        cap.appendChild(img);
-    }); 
+
+    const charecter = document.querySelector(".active_base")
+    const img = document.createElement("img");
+    img.src = charecter.src;
+    img.classList.add("capImg_hair");
+    cap.appendChild(img);
+   
+    const hair = document.querySelector(".active_hair")
+    console.log(hair);
+    const img2 = document.createElement("img");
+    img2.src = hair.src;
+    img2.classList.add("capImg_hair");
+    cap.appendChild(img2);
+
+    const cloth = document.querySelector(".active_cloth")
+    console.log(cloth);
+    const img3 = document.createElement("img");
+    img3.src = cloth.src;
+    img3.classList.add("capImg_hair");
+    cap.appendChild(img3);
+
+    const bottom = document.querySelector(".active_bottom")
+    const img4 = document.createElement("img");
+    img4.src = bottom.src;
+    img4.classList.add("capImg_bottom");
+    cap.appendChild(img4);
+
+    const shoes = document.querySelector(".active_shoes")
+    const img5 = document.createElement("img");
+    img5.src = shoes.src;
+    img5.classList.add("capImg_hair");
+    cap.appendChild(img5);
+
+    const accessory = document.querySelector(".active_accessory")
+    const img6 = document.createElement("img");
+    img6.src = accessory.src;
+    img6.classList.add("capImg_hair");
+    cap.appendChild(img6);
+
     cap.classList.add("result");
     html2canvas(cap).then(canvas => {
         saveAs(canvas);
     })
+
 })
 
 function saveAs(canvas) {

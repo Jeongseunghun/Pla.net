@@ -63,31 +63,31 @@ let spritesheetElements = "";
 let navigationElements = "";
 
 spritesheets_base.forEach((spritesheet, index) => {
-    spritesheetElements += `<img src="${spritesheet}" class="PixelArtImage walk Character_sprite-sheet_base index-${index}" />`
+    spritesheetElements += `<img src="${spritesheet}" class="PixelArtImage walk Character_sprite-sheet_base base_index-${index}" />`
 });
 
 spritesheets_hair.forEach((spritesheet, index) => {
-	spritesheetElements += `<img src="${spritesheet}" class="PixelArtImage walk Character_sprite-sheet_hair index-${index}" />`
+	spritesheetElements += `<img src="${spritesheet}" class="PixelArtImage walk Character_sprite-sheet_hair hair_index-${index}" />`
 	// navigationElements += `<button class="NavigationBubble index-${index}" onclick='setActive_hair(${index})' />`
 });
 
 spritesheets_accessory.forEach((spritesheet, index) => {
-	spritesheetElements += `<img src="${spritesheet}" class="PixelArtImage walk Character_sprite-sheet_accessory index-${index}" />`
+	spritesheetElements += `<img src="${spritesheet}" class="PixelArtImage walk Character_sprite-sheet_accessory accessory_index-${index}" />`
 	// navigationElements += `<button class="NavigationBubble index-${index}" onclick='setActive_accessory(${index})' />`
 });
 
 spritesheets_cloth.forEach((spritesheet, index) => {
-	spritesheetElements += `<img src="${spritesheet}" class="PixelArtImage walk Character_sprite-sheet_cloth index-${index}" />`
+	spritesheetElements += `<img src="${spritesheet}" class="PixelArtImage walk Character_sprite-sheet_cloth cloth_index-${index}" />`
 	// navigationElements += `<button class="NavigationBubble index-${index}" onclick='setActive_cloth(${index})' />`
 });
 
 spritesheets_bottom.forEach((spritesheet, index) => {
-	spritesheetElements += `<img src="${spritesheet}" class="PixelArtImage walk Character_sprite-sheet_bottom index-${index}" />`
+	spritesheetElements += `<img src="${spritesheet}" class="PixelArtImage walk Character_sprite-sheet_bottom bottom_index-${index}" />`
 	// navigationElements += `<button class="NavigationBubble index-${index}" onclick='setActive_bottom(${index})' />`
 });
 
 spritesheets_shoes.forEach((spritesheet, index) => {
-	spritesheetElements += `<img src="${spritesheet}" class="PixelArtImage walk Character_sprite-sheet_shoes index-${index}" />`
+	spritesheetElements += `<img src="${spritesheet}" class="PixelArtImage walk Character_sprite-sheet_shoes shoes_index-${index}" />`
 	// navigationElements += `<button class="NavigationBubble index-${index}" onclick='setActive_shoes(${index})' />`
 });
 
@@ -104,7 +104,7 @@ function setActive_base(index) {
 	document.querySelectorAll(`.active_base`).forEach(node => {
 		node.classList.remove("active_base")
 	})
-	document.querySelectorAll(`.index-${index}`).forEach(node => {
+	document.querySelectorAll(`.base_index-${index}`).forEach(node => {
 		node.classList.add("active_base")
 	})
 
@@ -116,7 +116,7 @@ function setActive_accessory(index) {
 	document.querySelectorAll(`.active_accessory`).forEach(node => {
 		node.classList.remove("active_accessory")
 	})
-	document.querySelectorAll(`.index-${index}`).forEach(node => {
+	document.querySelectorAll(`.accessory_index-${index}`).forEach(node => {
 		node.classList.add("active_accessory")
 	})
 
@@ -127,7 +127,7 @@ function setActive_hair(index) {
 	document.querySelectorAll(`.active_hair`).forEach(node => {
 		node.classList.remove("active_hair")
 	})
-	document.querySelectorAll(`.index-${index}`).forEach(node => {
+	document.querySelectorAll(`.hair_index-${index}`).forEach(node => {
 		node.classList.add("active_hair")
 	})
 
@@ -139,7 +139,7 @@ function setActive_cloth(index) {
 	document.querySelectorAll(`.active_cloth`).forEach(node => {
         node.classList.remove("active_cloth")
 	})
-	document.querySelectorAll(`.index-${index}`).forEach(node => {
+	document.querySelectorAll(`.cloth_index-${index}`).forEach(node => {
 		node.classList.add("active_cloth")
 	})
 
@@ -151,7 +151,7 @@ function setActive_bottom(index) {
 	document.querySelectorAll(`.active_bottom`).forEach(node => {
 		node.classList.remove("active_bottom")
 	})
-    document.querySelectorAll(`.index-${index}`).forEach(node => {
+    document.querySelectorAll(`.bottom_index-${index}`).forEach(node => {
 		node.classList.add("active_bottom")
 	})
 
@@ -162,7 +162,7 @@ function setActive_shoes(index) {
 	document.querySelectorAll(`.active_shoes`).forEach(node => {
 		node.classList.remove("active_shoes")
 	})
-    document.querySelectorAll(`.index-${index}`).forEach(node => {
+    document.querySelectorAll(`.shoes_index-${index}`).forEach(node => {
 		node.classList.add("active_shoes")
 	})
 

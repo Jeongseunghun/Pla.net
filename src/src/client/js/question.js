@@ -7,6 +7,7 @@ typingTxt = typingTxt.split("");
 var messageToClient = ""
 
 var tyInt = setInterval(firstTyping, 100);
+var characterName = "";
 
 function firstTyping() {
     if (lineIdx >= 2) {
@@ -39,6 +40,7 @@ const nameAnswer = document.querySelector("#name");
 nameAnswer.addEventListener('keypress', function (key) {
     if (key.key == 'Enter') {
         nameResult = nameAnswer.value;
+        characterName = $("#a" + lineIdx).text();
         nameAnswer.remove();
         const character = document.querySelector(".question_pixelart");
         character.classList.add("face-right");
@@ -387,6 +389,7 @@ const lastAnswer = document.querySelector("#last");
 lastAnswer.addEventListener('keypress', function (key) {
     if (key.key == 'Enter') {
         lastAnswer.remove();
+        sendMessage();
         const detail3 = document.createElement("li");
         detail3.innerHtml = "좋아! " + nameResult + "아. 짧게 이야기나눌 수  있어서 좋았어."; 
         typingTxt = detail3.innerHtml;
@@ -395,6 +398,19 @@ lastAnswer.addEventListener('keypress', function (key) {
         tyseven = setInterval(nineTyping, 100);
     }
 })
+
+function sendMessage() {
+    $.ajax({
+        type: "POST",
+        url: "/question",
+        data: {
+            "name": nameResult,
+            "message": message,
+            "character" : characterName,
+        },
+        dataType:"JSON",
+    })
+}
 
 function nineTyping() {
     if (lineIdx >= 10) {
