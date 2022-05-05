@@ -1,6 +1,6 @@
 import express from "express"
 import { getCustomPage, postCustomPage } from "../controller/CustomController";
-import { uploadFiles } from "../MiddleWares";
+import { uploadFiles } from "../middlewares";
 
 const customRouter = express.Router();
 
