@@ -76,5 +76,5 @@ function saveAs(canvas) {
         contentType: false,
     });
 
-    window.location.href = "http://localhost:8080/question";
+    window.location.href = "http://34.64.199.183:8080/question";
 }

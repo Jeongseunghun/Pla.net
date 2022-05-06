@@ -386,8 +386,10 @@ function createLastAnswer() {
 }
 
 const lastAnswer = document.querySelector("#last");
+var lastMessage = ""
 lastAnswer.addEventListener('keypress', function (key) {
     if (key.key == 'Enter') {
+        lastMessage = lastAnswer.value;
         lastAnswer.remove();
         sendMessage();
         const detail3 = document.createElement("li");
@@ -407,6 +409,7 @@ function sendMessage() {
             "name": nameResult,
             "message": message,
             "character" : characterName,
+            "lastMessage" : lastMessage
         },
         dataType:"JSON",
     })
