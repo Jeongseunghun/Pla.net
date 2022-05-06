@@ -1,6 +1,5 @@
 import customModel from "../models/Custom";
 import QRCode  from "qrcode";
-const spawn = require('child_process').spawn;
 
 export const getQuestion = async (req, res) => {
     const datas = await customModel.find({}).sort({"id": -1});
@@ -11,12 +10,13 @@ export const getQuestion = async (req, res) => {
 
 export const postQuestion = async (req, res) => {
     const { name, message, character, lastMessage } = req.body;
-
-    console.log(process.cwd());
-
-    const result = spawn('python3', ['lastMessage.py', lastMessage]);
-    result.stdout.on('data', (result) => {
-        console.log(result.toString());
+    const {spawn} = require('child_process');
+    const result = spawn('python', [process.cwd() + '/lastMessage.py', lastMessage]);
+    result.stdout.on('data', (data) => {
+        console.log(data.toString('utf8'));
+    })
+    result.stderr.on('data', (data) => {
+        console.log(data.toString('utf8'));
     })
 
     await customModel.findOneAndUpdate({name:character}, {$set: {username:name, message}});
