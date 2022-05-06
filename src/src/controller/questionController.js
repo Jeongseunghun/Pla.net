@@ -12,11 +12,13 @@ export const getQuestion = async (req, res) => {
 export const postQuestion = async (req, res) => {
     const { name, message, character, lastMessage } = req.body;
 
-    const result = spawn('python', ['lastMessage.py', lastMessage]);
+    console.log(process.cwd());
+
+    const result = spawn('python3', ['lastMessage.py', lastMessage]);
     result.stdout.on('data', (result) => {
         console.log(result.toString());
     })
-    
+
     await customModel.findOneAndUpdate({name:character}, {$set: {username:name, message}});
 
 }
