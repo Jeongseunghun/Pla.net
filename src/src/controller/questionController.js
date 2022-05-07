@@ -24,9 +24,18 @@ export const postQuestion = async (req, res) => {
 }
 
 function makeMessage(pororoResult) {
-    pororoResult = pororoResult.subsrt(1, pororoResult.length);
+    var catecory = new Array();
+    var percentage = new Array();
+
+    pororoResult = pororoResult.substr(1, pororoResult.length-2);
     pororoResult = pororoResult.split(",");
-    console.log(pororoResult);
+    for (var i = 0; i < pororoResult.length; i++) { // 배열 arr의 모든 요소의 인덱스(index)를 출력함.
+        tmp = pororoResult[i].split(":");
+        catecory.push(tmp[0].replace("'", "").replace(" ", ""));
+        percentage.push(parseFloat(tmp[1]));               
+    }
+    console.log(catecory);
+    console.log(percentage);
 }
 
 export const postQuestionDataForDb = async (req, res) => {
