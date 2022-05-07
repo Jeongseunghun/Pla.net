@@ -396,7 +396,7 @@ lastAnswer.addEventListener('keypress', function (key) {
 })
 
 function sendMessageToServer() {
-    $.ajax({
+    let categoryName = $.ajax({
         type: "POST",
         url: "/question",
         data: {
@@ -407,6 +407,7 @@ function sendMessageToServer() {
         },
         dataType: "JSON",
     })
+    console.log(categoryName.toString());
 }
 
 function nineTyping() {
