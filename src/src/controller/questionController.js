@@ -9,13 +9,13 @@ export const getQuestion = async (req, res) => {
 }
 
 export const postQuestion = async (req, res) => {
-    var pororoResult = "";
+    let pororoResult = "";
     const { name, message, character, lastMessage } = req.body;
     const {spawn} = require('child_process');
     const result = spawn('python3', [process.cwd() + '/lastMessage.py', lastMessage]);
 
     result.stdout.on('data', (data) => {
-        pororoResult = data.toString('utf8')
+        pororoResult += data.toString();
     })
     result.stderr.on('data', (data) => {
         console.log(data.toString('utf8'));
