@@ -49,8 +49,6 @@ function makeMessage(pororoResult) {
 
 export const postQuestionSave = async (req, res) => {
     const {message, userName, name } = req.body;
-    console.log(message);
-    console.log(userName);
-    console.log(name);
+
     await customModel.findOneAndUpdate({name}, {$set:{username: userName, message}});
 }

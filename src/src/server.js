@@ -2,6 +2,7 @@ import express from "express";
 import customRouter from "./routers/CustomRouter";
 import homeRouter from "./routers/homeRouter";
 import questionRouter from "./routers/questionRouter";
+import letterRouter from "./routers/letterRouter";
 
 const app = express();
 
@@ -16,5 +17,6 @@ app.use("/uploads", express.static("uploads"));
 app.use("/", homeRouter);
 app.use("/custom", customRouter);
 app.use("/question", questionRouter);
+app.use("/letter", letterRouter);
 
 export default app;

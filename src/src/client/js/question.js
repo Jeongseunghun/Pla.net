@@ -422,7 +422,6 @@ function nineTyping() {
     } else {
         checkIdx++;
         setTimeout(function () {
-            text.innerHTML = "";
             saveClientData()
         }, 1000);
     }
@@ -461,11 +460,13 @@ function createTenAnswer() {
         first.addEventListener("click", function () {
             controls.removeChild(first);
             controls.removeChild(second);
+            window.location.href = "http://34.64.199.183:8080/letter";
             document.querySelector(".question_typing").style.display = "inline-block";
         })
         second.addEventListener("click", function () {
             controls.removeChild(first);
             controls.removeChild(second);
+            window.location.href = "http://34.64.199.183:8080/letter";
             document.querySelector(".question_typing").style.display = "inline-block";
         })
         newAnswerBool = true;
