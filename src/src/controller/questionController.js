@@ -13,12 +13,13 @@ export const postQuestion = async (req, res) => {
     const {spawn} = require('child_process');
     const result = spawn('python3', [process.cwd() + '/lastMessage.py', lastMessage]);
 
+    let dataToSend;
     result.stdout.on('data', (data) => {
-        console.log(data.toString())
-        res.json(data.toString());
+        console.log(data.toString());
+        dataToSend = data.toString();
     })
-    result.stderr.on('data', (data) => {
-        console.log(data.toString('utf8'));
+    result.on('close', (code) => {
+        console.log(dataToSend + "ddddd");
     })
 
     await customModel.findOneAndUpdate({name:character}, {$set: {username:name, message}});
