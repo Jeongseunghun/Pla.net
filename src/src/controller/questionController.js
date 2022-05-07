@@ -14,7 +14,8 @@ export const postQuestion = async (req, res) => {
     const result = spawn('python3', [process.cwd() + '/lastMessage.py', lastMessage]);
 
     result.stdout.on('data', (data) => {
-        res.send(data.toString());
+        console.log(data.toString())
+        res.json(data.toString());
     })
     result.stderr.on('data', (data) => {
         console.log(data.toString('utf8'));

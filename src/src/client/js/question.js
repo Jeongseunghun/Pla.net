@@ -413,7 +413,7 @@ function sendMessage() {
         },
         dataType:"JSON",
     })
-    console.log(pororoResult);
+    console.log(pororoResult.json);
 }
 
 function nineTyping() {
