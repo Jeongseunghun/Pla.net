@@ -409,7 +409,6 @@ const accessoryNextButton = document.querySelector(".NextSpritesheetButton--next
 accessoryPrevButton.addEventListener("click", function () {
 	setPreviousActive_accessory();
 	setPreviousActive_base();
-	accessory_re();
 	hair_re();
 	cloth_re();
 	bottom_re();
@@ -418,8 +417,7 @@ accessoryPrevButton.addEventListener("click", function () {
 
 accessoryNextButton.addEventListener("click", function () {
 	setNextActive_accessory();
-	setNextActive_base();
-	accessory_re();
+	setPreviousActive_base();
 	hair_re();
 	cloth_re();
 	bottom_re();

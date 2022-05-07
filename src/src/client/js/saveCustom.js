@@ -1,7 +1,7 @@
 import "../scss/styles.scss";
 import html2canvas from "html2canvas";
 
-const dlBtn = document.querySelector(".download-btn");
+const dlBtn = document.querySelector(".new-btn");
 
 dlBtn.addEventListener("click", function () {
     const cap = document.querySelector("#cap");

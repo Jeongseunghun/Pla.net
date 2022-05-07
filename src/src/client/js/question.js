@@ -402,18 +402,14 @@ lastAnswer.addEventListener('keypress', function (key) {
 })
 
 function sendMessage() {
-    let pororoResult = $.ajax({
+    $.ajax({
         type: "POST",
         url: "/question",
         data: {
-            "name": nameResult,
-            "message": message,
-            "character" : characterName,
             "lastMessage" : lastMessage
         },
         dataType:"JSON",
     })
-    console.log(pororoResult.json);
 }
 
 function nineTyping() {

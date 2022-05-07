@@ -9,7 +9,7 @@ export const getQuestion = async (req, res) => {
 }
 
 export const postQuestion = async (req, res) => {
-    const { name, message, character, lastMessage } = req.body;
+    const {lastMessage } = req.body;
     const {spawn} = require('child_process');
     const result = spawn('python3', [process.cwd() + '/lastMessage.py', lastMessage]);
 
@@ -18,10 +18,9 @@ export const postQuestion = async (req, res) => {
         console.log(data.toString());
         dataToSend = data.toString();
     })
-    result.on('close', (code) => {
-        console.log(dataToSend + "ddddd");
-    })
+    console.log("시작" + dataToSend + "종료");
+}
 
+export const postQuestionDataForDb = async (req, res) => {
     await customModel.findOneAndUpdate({name:character}, {$set: {username:name, message}});
-
 }

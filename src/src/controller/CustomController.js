@@ -4,7 +4,7 @@ var name = null;
 var url = null;
 
 export const getCustomPage = async (req, res) => {
-    return res.render("test");
+    return res.render("custom");
 }
 
 export const postCustomPage = async (req, res) => {
