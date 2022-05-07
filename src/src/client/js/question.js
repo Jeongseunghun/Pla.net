@@ -402,7 +402,7 @@ lastAnswer.addEventListener('keypress', function (key) {
 })
 
 function sendMessage() {
-    let qr = $.ajax({
+    let pororoResult = $.ajax({
         type: "POST",
         url: "/question",
         data: {
@@ -413,7 +413,7 @@ function sendMessage() {
         },
         dataType:"JSON",
     })
-    console.log(qr);
+    console.log(pororoResult);
 }
 
 function nineTyping() {
