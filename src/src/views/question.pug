@@ -9,17 +9,12 @@ html(lang="ko")
                 img(class="question_character_spritesheet question_pixelart", src=url)
             div(class="color-controls")
                 ul
-                    li(id="a1") 안녕😊 만나서 반가워. 내가 널 뭐라고 부르면 될까?
-                    li(id="a2") #{name}
-                    li(id="a3") 
-                    li(id="a4") 아무래도 평온한 상태를 언제나 유지한다는건 어려운 일인 것 같아... 어떤게 가장 널 힘들게 만드는 것 같아?
-                    li(id="a5") 그렇지.. 그러면서도 복합적인 이유가 있는 것 같아. 최근에도 힘들거나 우울했던 일들이 있었어? 
-                    li(id="a6") 그랬구나.. 난 요즘 사람들이 무심코 한 말로 괜히 상처를 받기도 하는 것 같아. 혹시 너도 자신감을 떨어뜨리거나 상처가 됐던 말이 있어?
-                p(class="typing")
-                input(id="name", type="text", placeHolder="")
-                input(id="traffic", type="text", placeHolder="")
-                input(id="worry", type="text", placeHolder="")
-                input(id="last", type="text", placeHolder="")
+                    li(id="question_character") #{name} 
+                p(class="question_typing")
+                input(id="name", type="text", placeHolder="", class="textinput width-dynamic")
+                input(id="traffic", type="text", placeHolder="", class="textinput width-dynamic")
+                input(id="worry", type="text", placeHolder="", class="textinput width-dynamic")
+                input(id="last", type="text", placeHolder="", class="textinput width-dynamic")
             div(id="qrcode", style="width:100px; height:100px;")
         script(src="http://code.jquery.com/jquery-latest.js")
         script(src="/static/js/question.js")

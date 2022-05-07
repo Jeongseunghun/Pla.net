@@ -1,3 +1,24 @@
+@charset "UTF-8";
+
+
+:root {
+   --pixel-size: 6;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   /* background-image: linear-gradient(180deg, #eaeaea 0%, #eaeaea 100%); */
+   height: 100%;
+   min-height: 100vh;
+   padding-top: calc(var(--pixel-size) * 18px);
+   font-family: "Dosis", sans-serif;
+}
+
+ul {
+   display: none;
+}
+
 .question_character {
    width: calc(var(--pixel-size) * 32px);
    height: calc(var(--pixel-size) * 32px);
@@ -8,7 +29,7 @@
 
 .question_character_spritesheet {
    -webkit-animation: walkAnimation 1.5s steps(4) infinite;
-   animation: walkAnimation 1.5s steps(4) infinite; 
+   animation: walkAnimation 1.5s steps(4) infinite;
    display: block;
    width: calc(var(--pixel-size) * 128px);
 }
@@ -17,41 +38,44 @@
    image-rendering: -moz-crisp-edges;
    image-rendering: -webkit-crisp-edges;
    -ms-interpolation-mode: nearest-neighbor;
-      image-rendering: pixelated;
+   image-rendering: pixelated;
    image-rendering: crisp-edges;
 }
 
 .face-right {
-    top: calc(-32px * var(--pixel-size));
- }
- .face-up {
-    top: calc(-64px * var(--pixel-size));
- }
- .face-left {
-    top: calc(-96px * var(--pixel-size));
- }
- 
- 
- @-webkit-keyframes walkAnimation {
-	from {
-	  transform: translate3d(0%,0%,0);
-	}
-	to {
-	  transform: translate3d(-100%,0%,0);
-	}
-  }
-  
-  @keyframes walkAnimation {
-	from {
-	  transform: translate3d(0%,0%,0);
-	}
-	to {
-	  transform: translate3d(-100%,0%,0);
-	}
-  }
+   top: calc(-32px * var(--pixel-size));
+}
+
+.face-up {
+   top: calc(-64px * var(--pixel-size));
+}
+
+.face-left {
+   top: calc(-96px * var(--pixel-size));
+}
+
+@-webkit-keyframes walkAnimation {
+   from {
+      transform: translate3d(0%, 0%, 0);
+   }
+
+   to {
+      transform: translate3d(-100%, 0%, 0);
+   }
+}
+
+@keyframes walkAnimation {
+   from {
+      transform: translate3d(0%, 0%, 0);
+   }
+
+   to {
+      transform: translate3d(-100%, 0%, 0);
+   }
+}
 
 #name {
-    display: none;
+   display: none;
 }
 
 #traffic {
@@ -66,44 +90,114 @@
    display: none;
 }
 
+
 .answer1 {
-    @include pokeFont(2); 
-    display: inline-block;
-    cursor: pointer;
-    animation: fadein 2s; 
- }
+   font-family: "Pokemon GB", monospace;
+   font-weight: 400;
+   font-size: 20px;
+   text-transform: uppercase;
+   font-smooth: never;
+   -webkit-font-smoothing: none;
+   display: inline-block;
+   cursor: pointer;
+   animation: fadein 2s;
+}
 
- .answer2 {
-    @include pokeFont(2); 
-    display: inline-block;
-    cursor: pointer;
-    animation: fadein 2s; 
- }
+.answer2 {
+   font-family: "Pokemon GB", monospace;
+   font-weight: 400;
+   font-size: 20px;
+   text-transform: uppercase;
+   font-smooth: never;
+   -webkit-font-smoothing: none;
+   display: inline-block;
+   cursor: pointer;
+   animation: fadein 2s;
+}
 
- .answer3 {
-    @include pokeFont(2); 
-    display: inline-block;
-    cursor: pointer;
-    animation: fadein 2s; 
- }
+.answer3 {
+   font-family: "Pokemon GB", monospace;
+   font-weight: 400;
+   font-size: 20px;
+   text-transform: uppercase;
+   font-smooth: never;
+   -webkit-font-smoothing: none;
+   display: inline-block;
+   cursor: pointer;
+   animation: fadein 2s;
+}
 
- .answer4 {
-    @include pokeFont(2); 
-    display: inline-block;
-    cursor: pointer;
-    animation: fadein 2s; 
-    word-break:break-all;
- }
+.answer4 {
+   font-family: "Pokemon GB", monospace;
+   font-weight: 400;
+   font-size: 20px;
+   text-transform: uppercase;
+   font-smooth: never;
+   -webkit-font-smoothing: none;
+   display: inline-block;
+   cursor: pointer;
+   animation: fadein 2s;
+   word-break: break-all;
+}
 
- #lastAnswer {
-     display: none;
- }
 
- @keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* 하영 추가 */
+.answer1:hover {
+   font-weight: 700;
+   color: rgb(37, 37, 37)
+}
+
+.answer2:hover {
+   font-weight: 700;
+   color: rgb(37, 37, 37)
+}
+
+.answer3:hover {
+   font-weight: 700;
+   color: rgb(37, 37, 37)
+}
+
+.answer4:hover {
+   font-weight: 700;
+   color: rgb(37, 37, 37)
+}
+
+.textinput {
+   padding-left: 5px;
+   outline: none;
+   min-width: 50px;
+   max-width: 80%;
+   background-color: transparent;
+   border: 0;
+   border-bottom: 2px solid rgb(194, 194, 194);
+   font-weight: 400;
+   font-size: medium;
+   height: 40px;
+   border-radius: 0;
+}
+
+.textinput:focus {
+   border-color: #3d3d3d;
+}
+
+/* 여기까지 복사 */
+
+
+#lastAnswer {
+   display: none;
+}
+
+.question_typing {
+   @include pokeFont(2);
+   display: inline-block;
+}
+
+@keyframes fadein {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
 }

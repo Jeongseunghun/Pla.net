@@ -9,7 +9,7 @@ export const getQuestion = async (req, res) => {
 }
 
 export const postQuestion = async (req, res) => {
-    const {message, lastMessage } = req.body;
+    const {messageForClient, lastMessage, userName, name } = req.body;
     const {spawn} = require('child_process');
     const result = spawn('python3', [process.cwd() + '/lastMessage.py', lastMessage]);
 
@@ -19,7 +19,8 @@ export const postQuestion = async (req, res) => {
         pororoResult = data.toString();
     })
     result.on('close', (code) => {
-        makeMessage(pororoResult)
+        var categoryName = makeMessage(pororoResult);
+        console.log(categoryName);
     })
 }
 
@@ -30,12 +31,19 @@ function makeMessage(pororoResult) {
     pororoResult = pororoResult.substr(1, pororoResult.length-2);
     pororoResult = pororoResult.split(",");
     for (var i = 0; i < pororoResult.length; i++) { // 배열 arr의 모든 요소의 인덱스(index)를 출력함.
-        tmp = pororoResult[i].split(":");
-        catecory.push(tmp[0].replace("'", "").replace(" ", ""));
+        var tmp = pororoResult[i].split(":");
+        catecory.push(tmp[0].replace("'", "").replace(" ", "").replace("'", ""));
         percentage.push(parseFloat(tmp[1]));               
     }
-    console.log(catecory);
-    console.log(percentage);
+    var maxPercentage = 0;
+    var maxIndex = 0;
+    for (var i = 0; i < percentage.length; i++) {
+        if (maxPercentage < percentage[i]) {
+            maxPercentage = percentage[i];
+            maxIndex = i;
+        }
+    }
+    return category[maxIndex];
 }
 
 export const postQuestionDataForDb = async (req, res) => {

@@ -1,8 +1,9 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Pokemon GB";
-  src: url("https://cdn.rawgit.com/Superpencil/pokemon-font/d36892e5/fonts/pokemon-font.eot");
-  font-weight: 400;
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/DOSGothic.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
 }
 #home {
   display: flex;
@@ -64,6 +65,8 @@
   }
 }
 .color-controls {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   z-index: 99;
   left: 50%;
@@ -86,33 +89,17 @@
 }
 .color-controls .typing {
   font-family: "Pokemon GB", monospace;
-  font-weight: 400;
   font-size: 20px;
   text-transform: uppercase;
-  font-smooth: never;
+  font-weight: bold;
   -webkit-font-smoothing: none;
   display: inline-block;
-  animation-name: cursor;
-  animation-duration: 0.3s;
-  animation-iteration-count: infinite;
-}
-@keyframes cursor {
-  0% {
-    border-right: 1px solid #fff;
-  }
-  50% {
-    border-right: 1px solid #000;
-  }
-  100% {
-    border-right: 1px solid #fff;
-  }
 }
 .color-controls #start {
   font-family: "Pokemon GB", monospace;
-  font-weight: 400;
   font-size: 20px;
   text-transform: uppercase;
-  font-smooth: never;
+  font-weight: bold;
   -webkit-font-smoothing: none;
   display: none;
   text-align: center;
@@ -628,6 +615,24 @@ body {
   background-color: #4c4c4c;
 }
 
+:root {
+  --pixel-size: 6;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background-image: linear-gradient(180deg, #eaeaea 0%, #eaeaea 100%); */
+  height: 100%;
+  min-height: 100vh;
+  padding-top: calc(var(--pixel-size) * 18px);
+  font-family: "Dosis", sans-serif;
+}
+
+ul {
+  display: none;
+}
+
 .question_character {
   width: calc(var(--pixel-size) * 32px);
   height: calc(var(--pixel-size) * 32px);
@@ -744,8 +749,57 @@ body {
   word-break: break-all;
 }
 
+/* 하영 추가 */
+.answer1:hover {
+  font-weight: 700;
+  color: rgb(37, 37, 37);
+}
+
+.answer2:hover {
+  font-weight: 700;
+  color: rgb(37, 37, 37);
+}
+
+.answer3:hover {
+  font-weight: 700;
+  color: rgb(37, 37, 37);
+}
+
+.answer4:hover {
+  font-weight: 700;
+  color: rgb(37, 37, 37);
+}
+
+.textinput {
+  padding-left: 5px;
+  outline: none;
+  min-width: 50px;
+  max-width: 80%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid rgb(194, 194, 194);
+  font-weight: 400;
+  font-size: medium;
+  height: 40px;
+  border-radius: 0;
+}
+
+.textinput:focus {
+  border-color: #3d3d3d;
+}
+
+/* 여기까지 복사 */
 #lastAnswer {
   display: none;
+}
+
+.question_typing {
+  font-family: "Pokemon GB", monospace;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  -webkit-font-smoothing: none;
+  display: inline-block;
 }
 
 @keyframes fadein {
