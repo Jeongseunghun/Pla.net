@@ -424,7 +424,6 @@ function nineTyping() {
         setTimeout(function () {
             text.innerHTML = "";
             saveClientData()
-            createTenAnswer();
         }, 1000);
     }
 }
@@ -435,13 +434,14 @@ function saveClientData() {
         type: "POST",
         url: "/question/save",
         data: {
-            "messageForClient": messageForClient,
+            "message": messageForClient,
             "userName" : nameResult,
             "name" : characterName,
         },
         dataType: "JSON",
         async: true,
     })
+    createTenAnswer();
 }
 
 var tenAnswerBool = false;
