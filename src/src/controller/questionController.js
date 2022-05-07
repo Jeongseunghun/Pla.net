@@ -9,7 +9,7 @@ export const getQuestion = async (req, res) => {
 }
 
 export const postQuestion = async (req, res) => {
-    let pororoResult = "";
+    let pororoResult = "11";
     const { name, message, character, lastMessage } = req.body;
     const {spawn} = require('child_process');
     const result = spawn('python3', [process.cwd() + '/lastMessage.py', lastMessage]);
