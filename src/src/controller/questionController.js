@@ -13,12 +13,15 @@ export const postQuestion = async (req, res) => {
     const result = spawn('python3', [process.cwd() + '/lastMessage.py', lastMessage]);
 
     let pororoResult;
+    var categoryName;
+    
     result.stdout.on('data', (data) => {
         console.log(data.toString());
         pororoResult = data.toString();
+        categoryName = makeMessage(pororoResult);
     })
     result.on('close', (code) => {
-        return res.json(makeMessage(pororoResult));
+        return res.json({name:categoryName});
     })
 }
 

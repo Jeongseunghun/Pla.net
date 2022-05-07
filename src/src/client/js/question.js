@@ -409,7 +409,7 @@ function sendMessageToServer() {
         dataType: "JSON",
         async: true,
         success: function(data){
-            categoryName = data;
+            categoryName = data.name;
           }
     })
     console.log(categoryName);
