@@ -1,5 +1,4 @@
 import customModel from "../models/Custom";
-import QRCode  from "qrcode";
 
 export const getQuestion = async (req, res) => {
     const datas = await customModel.find({}).sort({"id": -1});
@@ -20,9 +19,7 @@ export const postQuestion = async (req, res) => {
     })
     result.on('close', (code) => {
         var categoryName = makeMessage(pororoResult);
-        var realLastMessage = messageForClient + categoryName + "에 관한 걱정은 내가 갖고 사라질게! 마법처럼 모든 일이 사라지거나 해결되지 않더라도, 분명 네 안에 또 한번 맞설 수 있는 힘이 생겼을거야. 널 믿는다 친구!"
-        await customModel.findOneAndUpdate({name:name}, {$set: {userName:userName, message: realLastMessage}});
-        res.json(categoryName);
+        return res.json(categoryName);
     })
 }
 
@@ -46,8 +43,4 @@ function makeMessage(pororoResult) {
         }
     }
     return catecory[maxIndex];
-}
-
-export const postQuestionDataForDb = async (req, res) => {
-    await customModel.findOneAndUpdate({name:character}, {$set: {username:name, message}});
 }
