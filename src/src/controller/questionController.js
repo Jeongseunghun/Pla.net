@@ -9,12 +9,19 @@ export const getQuestion = async (req, res) => {
 }
 
 export const postQuestion = async (req, res) => {
+    var pororoResult = "";
     const { name, message, character, lastMessage } = req.body;
     const {spawn} = require('child_process');
     const result = spawn('python3', [process.cwd() + '/lastMessage.py', lastMessage]);
-    
-    console.log("1번결과물입니다" + result)
-    console.log("2번결과물입니다" + result.data.toString('utf8'));
+
+    result.stdout.on('data', (data) => {
+        pororoResult = data.toString('utf8')
+    })
+    result.stderr.on('data', (data) => {
+        console.log(data.toString('utf8'));
+    })
+
+    console.log(pororoResult);
 
     await customModel.findOneAndUpdate({name:character}, {$set: {username:name, message}});
 
