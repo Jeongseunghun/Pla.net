@@ -18,7 +18,9 @@ export const postQuestion = async (req, res) => {
         console.log(data.toString());
         dataToSend = data.toString();
     })
-    console.log("시작" + dataToSend + "종료");
+    result.on('close', (code) => {
+        console.log("시작" + dataToSend + "종료");
+    })
 }
 
 export const postQuestionDataForDb = async (req, res) => {
