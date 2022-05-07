@@ -8,7 +8,7 @@ export const getQuestion = async (req, res) => {
 }
 
 export const postQuestion = async (req, res) => {
-    const {messageForClient, lastMessage, userName, name } = req.body;
+    const { lastMessage } = req.body;
     const {spawn} = require('child_process');
     const result = spawn('python3', [process.cwd() + '/lastMessage.py', lastMessage]);
 
@@ -45,4 +45,10 @@ function makeMessage(pororoResult) {
         }
     }
     return catecory[maxIndex];
+}
+
+export const postQuestionSave = async (req, res) => {
+    const {messageForClient, userName, name } = req.body;
+
+    await customModel.findOneAndUpdate({name}, {$set:{username: userName, message: messageForClient}});
 }

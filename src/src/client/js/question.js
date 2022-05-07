@@ -399,10 +399,7 @@ function sendMessageToServer() {
         type: "POST",
         url: "/question",
         data: {
-            "messageForClient": messageForClient,
             "lastMessage": lastMessage,
-            "userName" : nameResult,
-            "name" : characterName,
         },
         dataType: "JSON",
         async: true,
@@ -426,9 +423,25 @@ function nineTyping() {
         checkIdx++;
         setTimeout(function () {
             text.innerHTML = "";
+            saveClientData()
             createTenAnswer();
         }, 1000);
     }
+}
+
+function saveClientData() {
+    messageForClient += categoryName + "에 관한 걱정은 내가 갖고 사라질게! 마법처럼 모든 일이 사라지거나 해결되지 않더라도, 분명 네 안에 또 한번 맞설 수 있는 힘이 생겼을거야. 널 믿는다 친구!"
+    $.ajax({
+        type: "POST",
+        url: "/question/save",
+        data: {
+            "messageForClient": messageForClient,
+            "userName" : nameResult,
+            "name" : characterName,
+        },
+        dataType: "JSON",
+        async: true,
+    })
 }
 
 var tenAnswerBool = false;
