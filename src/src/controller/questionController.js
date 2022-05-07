@@ -18,8 +18,7 @@ export const postQuestion = async (req, res) => {
         pororoResult = data.toString();
     })
     result.on('close', (code) => {
-        var categoryName = makeMessage(pororoResult);
-        return res.json(categoryName);
+        return res.json(makeMessage(pororoResult));
     })
 }
 
