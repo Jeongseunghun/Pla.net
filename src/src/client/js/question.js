@@ -406,6 +406,7 @@ function sendMessage() {
         type: "POST",
         url: "/question",
         data: {
+            "message" : message,
             "lastMessage" : lastMessage
         },
         dataType:"JSON",

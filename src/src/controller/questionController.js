@@ -9,18 +9,24 @@ export const getQuestion = async (req, res) => {
 }
 
 export const postQuestion = async (req, res) => {
-    const {lastMessage } = req.body;
+    const {message, lastMessage } = req.body;
     const {spawn} = require('child_process');
     const result = spawn('python3', [process.cwd() + '/lastMessage.py', lastMessage]);
 
-    let dataToSend;
+    let pororoResult;
     result.stdout.on('data', (data) => {
         console.log(data.toString());
-        dataToSend = data.toString();
+        pororoResult = data.toString();
     })
     result.on('close', (code) => {
-        console.log("시작" + dataToSend + "종료");
+        makeMessage(pororoResult)
     })
+}
+
+function makeMessage(pororoResult) {
+    pororoResult = pororoResult.subsrt(1, pororoResult.length);
+    pororoResult = pororoResult.split(",");
+    console.log(pororoResult);
 }
 
 export const postQuestionDataForDb = async (req, res) => {
