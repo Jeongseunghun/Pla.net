@@ -387,16 +387,14 @@ lastAnswer.addEventListener('keypress', function (key) {
     if (key.key == 'Enter') {
         lastMessage = lastAnswer.value;
         lastAnswer.remove();
-        typingTxt = "너는 {WorryClass}에 대해 걱정이 많았구나... \n " + "좋아! " + nameResult + "! \n 짧게나마 이야기 나눌 수 있어서 좋았어. \n 내가 널 위해 편지를 준비했는데 읽어볼래? 😉";
         typingIdx = 0;
         text.innerHTML = "";
         sendMessageToServer();
-        tyseven = setInterval(nineTyping, 100);
     }
 })
 
+var categoryName = "";
 function sendMessageToServer() {
-    var categoryName = "";
     $.ajax({
         type: "POST",
         url: "/question",
@@ -410,9 +408,10 @@ function sendMessageToServer() {
         async: true,
         success: function(data){
             categoryName = data.name;
-          }
+            typingTxt = "너는 " + categoryName + "에 대해 걱정이 많았구나... \n " + "좋아! " + nameResult + "! \n 짧게나마 이야기 나눌 수 있어서 좋았어. \n 내가 널 위해 편지를 준비했는데 읽어볼래? 😉";
+            tyseven = setInterval(nineTyping, 100);
+        }
     })
-    console.log(categoryName);
 }
 
 function nineTyping() {
